@@ -1,0 +1,21 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+
+	<!-- external libs -->
+	<Script file="LibStub/LibStub.lua" />
+	<Include file="CallbackHandler-1.0\CallbackHandler-1.0.lua" />
+	<Script file="LibRangeCheck-2.0\LibRangeCheck-2.0.lua" />
+	<Script file="AceAddon-3.0\AceAddon-3.0.lua" />
+	<Script file="LibDispellable-1.0\LibDispellable-1.0.lua" />
+	<Script file="LibSharedMedia-3.0\LibSharedMedia-3.0.lua" />
+	<Include file="DiesalComm-1.0\DiesalComm-1.0.xml" />
+	<Script file="DiesalTools-1.0\DiesalTools-1.0.lua" />
+	<Script file="DiesalStyle-1.0\DiesalStyle-1.0.lua" />
+	<Include file="DiesalGUI-1.0\DiesalGUI-1.0.xml" />
+	<Include file="DiesalMenu-1.0\DiesalMenu-1.0.xml" />
+	<Script file="LibArtifactData-1.0\LibArtifactData-1.0.lua" />
+	<Script file="LibBossIDs-1.0\LibBossIDs-1.0.lua" />
+	<Script file="TableExplorer\core.lua" />
+	<Script file="TableExplorer\objects\TableExplorer.lua" />
+
+</Ui>

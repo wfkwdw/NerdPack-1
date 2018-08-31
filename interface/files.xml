@@ -1,0 +1,16 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+	<Script file="diesalgui_objects.lua" />
+	<Script file="tools.lua" />
+	<Script file="new_profiles.lua" />
+	<Script file="ui_elements.lua" />
+	<Script file="mainframe.lua" />
+	<Script file="settings.lua" />
+	<Script file="toggles.lua" />
+	<Script file="default_toggles.lua" />
+	<Script file="om.lua" />
+	<Script file="actionlog.lua" />
+	<Script file="alert.lua" />
+	<Script file="splash.lua" />
+
+</Ui>

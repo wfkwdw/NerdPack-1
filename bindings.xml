@@ -1,0 +1,14 @@
+<Bindings>
+	<Binding name="MasterToggle" description="Toggle ON/OFF" header="NEP_Core" category="NerdPack-Core">
+		NeP.Interface:toggleToggle('mastertoggle')
+	</Binding>
+	<Binding name="Interrupts" description="Toggle ON/OFF" header="NEP_Core" category="NerdPack-Core">
+		NeP.Interface:toggleToggle('interrupts')
+	</Binding>
+	<Binding name="Cooldowns" description="Toggle ON/OFF" header="NEP_Core" category="NerdPack-Core">
+		NeP.Interface:toggleToggle('cooldowns')
+	</Binding>
+	<Binding name="AoE" description="Toggle ON/OFF" header="NEP_Core" category="NerdPack-Core">
+		NeP.Interface:toggleToggle('aoe')
+	</Binding>
+</Bindings>

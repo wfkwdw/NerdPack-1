@@ -1,0 +1,26 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+
+	<Script file="listener.lua" />
+	<Script file="core.lua" />
+	<Script file="debug.lua" />
+	<Script file="commands.lua" />
+	<Script file="tooltip.lua" />
+	<Script file="conditions.lua" />
+	<Script file="dsl.lua" />
+	<Script file="compiler.lua" />
+	<Script file="lib.lua" />
+	<Script file="config.lua" />
+	<Script file="CRs.lua" />
+	<Script file="buttons.lua" />
+	<Script file="combattracker.lua" />
+	<Script file="actions.lua" />
+	<Script file="helpers.lua" />
+	<Script file="parser.lua" />
+	<Script file="queuer.lua" />
+	<Script file="fakeunits.lua" />
+	<Script file="om.lua" />
+	<Script file="healing.lua" />
+	<Script file="keybinds.lua" />
+
+</Ui>

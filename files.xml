@@ -1,0 +1,23 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+
+	<!-- external libs -->
+	<Include file="Libs\files.xml" />
+
+	<!-- Core -->
+	<Script file="NerdPack.lua" />
+	<include file="locale\files.xml" />
+	<Script file="styles.lua" />
+	<include file="tables\files.xml" />
+	<include file="system\files.xml" />
+	<Include file="interface\files.xml" />
+	<Include file="conditions\files.xml" />
+	<Include file="protected\files.xml" />
+	<Script file="commands.lua" />
+	<Script file="fakeunits.lua" />
+	<Script file="actions.lua" />
+	<Script file="misc.lua" />
+	<Script file="apis.lua" />
+	<Script file="deprecated.lua" />
+
+</Ui>

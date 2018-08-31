@@ -1,0 +1,3 @@
+--local _, NeP = ...
+
+--NeP.Locale.deDE = {}
