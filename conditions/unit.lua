@@ -23,12 +23,12 @@ local UnitClsf = {
   ['worldboss'] = 5
 }
 
-NeP.DSL:Register('boss', function (target)
+NeP.DSL:Register("boss", function (target)
+  if NeP.DSL:Get("isdummy")(target) then return end
   local classification = UnitClassification(target)
   if UnitClsf[classification] then
-    return UnitClsf[classification] >= 3
+    return UnitClsf[classification] >= 3 or NeP.BossID:Eval(target)
   end
-  return NeP.BossID:Eval(target)
 end)
 
 NeP.DSL:Register('elite', function (target)
@@ -254,7 +254,8 @@ NeP.DSL:Register("falling", function()
 end)
 
 NeP.DSL:Register({"deathin", "ttd", "timetodie"}, function(target)
-  return NeP.CombatTracker:TimeToDie(target)
+  if NeP.DSL:Get("isdummy")(target) then return 999
+  else return NeP.CombatTracker:TimeToDie(target) end
 end)
 
 NeP.DSL:Register("charmed", function(target)

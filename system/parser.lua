@@ -87,8 +87,8 @@ function NeP.Parser:Target(eval)
 	if not Target_cache[eval.target] then
 		Target_cache[eval.target] = eval.target
 		and _G.UnitExists(eval.target)
-		and _G.UnitIsVisible(eval.target)
-		and NeP.Protected.LineOfSight('player', eval.target)
+		--[[and _G.UnitIsVisible(eval.target)
+		and NeP.Protected.LineOfSight('player', eval.target)]]
 		and not self:Unit_Blacklist(eval.target)
 	end
 	return Target_cache[eval.target]

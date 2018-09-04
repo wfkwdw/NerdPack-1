@@ -61,14 +61,9 @@ end)
 
 -- Dispell all
 NeP.Actions:Add("dispelall", function(eval)
-  for i=1, GetObjectCount() do
-		local Obj = GetObjectWithIndex(i)
-		if ObjectValid(Obj)
-		 and UnitIsFriend("player", Obj)
-		 and (UnitInRaid(Obj) or UnitInParty(Obj)) then
-          if FindDispell(eval, Obj) then return true; end
-        end
-  end
+  for _, Obj in pairs(NeP.OM:Get("Roster")) do
+   if FindDispell(eval, Obj.key) then return true; end
+   end
 end)
 
 -- Executes a users macro
@@ -112,17 +107,13 @@ end)
 -- USAGE %taunt(SPELL)
 NeP.Actions:Add("taunt", function(eval)
   if not IsSpellReady(eval[1].args) then return end
-    for i=1, _G.GetObjectCount() do
-		local Obj = _G.GetObjectWithIndex(i)
-		if _G.UnitInPhase(Obj)
-	     and _G.UnitIsVisible(Obj)
-		 and NeP.Protected.LineOfSight("player", Obj)
-		 and _G.UnitCanAttack("player", Obj)
-         and NeP.Protected.Distance("player", Obj) <= 30
-         and NeP.Taunts:ShouldTaunt(Obj.key) then
-          eval.spell = eval[1].args
-          eval[3].target = Obj
-          eval.exe = funcs["Cast"]
+  for _, Obj in pairs(NeP.OM:Get("Enemy")) do
+    if _G.UnitExists(Obj.key)
+    and Obj.distance <= 30
+    and NeP.Taunts:ShouldTaunt(Obj.key) then
+      eval.spell = eval[1].args
+      eval[3].target = Obj.key
+      eval.exe = funcs["Cast"]
       return true
     end
   end
@@ -131,19 +122,16 @@ end)
 -- Ress all dead
 NeP.Actions:Add("ressdead", function(eval)
   if not IsSpellReady(eval[1].args) then return end
-    for i=1, _G.GetObjectCount() do
-		local Obj = _G.GetObjectWithIndex(i)
-		if _G.UnitInPhase(Obj)
-	     and _G.UnitIsVisible(Obj)
-		 and NeP.Protected.LineOfSight("player", Obj)
-         and NeP.Protected.Distance("player", Obj) <= 40
-		 and _G.UnitIsFriend("player", Obj)
-		 and ((_G.UnitInRaid(Obj) or _G.UnitInParty(Obj)) or _G.UnitIsPVP("player"))
-	     and _G.UnitIsDead(Obj)
-	     and not _G.UnitIsGhost(Obj)
-         and _G.UnitIsPlayer(Obj) then
+   for _, Obj in pairs(NeP.OM:Get("Dead", true)) do
+     if NeP.Protected.Distance("player", Obj.key) <= 40
+	 and _G.UnitExists(Obj.key)
+	 and _G.UnitIsFriend("player", Obj.key)
+	 and (_G.UnitInRaid(Obj.key) or _G.UnitInParty(Obj.key))
+	 and _G.UnitIsDead(Obj.key)
+	 and not _G.UnitIsGhost(Obj.key)
+     and _G.UnitIsPlayer(Obj.key) then
           eval.spell = eval[1].args
-          eval[3].target = Obj
+          eval[3].target = Obj.key
           eval.exe = funcs["Cast"]
       return true
     end
